@@ -69,9 +69,9 @@ const Footer = () => {
 
   return (
     <footer className="border-t border-border/40 bg-card/50 backdrop-blur-sm">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="col-span-1">
+      <div className="container mx-auto px-4 py-12 max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
+          <div className="col-span-1 flex flex-col items-center md:items-start">
             <div className="flex items-center gap-2 mb-4">
               <div className="p-2 rounded-lg bg-primary/10">
                 <Ghost className="h-5 w-5 text-primary" />
@@ -83,7 +83,7 @@ const Footer = () => {
             </p>
           </div>
 
-          <div>
+          <div className="flex flex-col items-center md:items-start">
             <h4 className="font-semibold mb-4">Navigation</h4>
             <ul className="space-y-2">
               <li>
@@ -104,7 +104,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
+          <div className="flex flex-col items-center md:items-start">
             <h4 className="font-semibold mb-4">Developers</h4>
             <ul className="space-y-2">
               <li>
@@ -125,7 +125,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
+          <div className="flex flex-col items-center md:items-start">
             <h4 className="font-semibold mb-4">Connect</h4>
             <div className="flex gap-4">
               <a
@@ -146,7 +146,7 @@ const Footer = () => {
 
         {/* System Info Bar */}
         <div className="mt-8 pt-8 border-t border-border/40">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 justify-items-center">
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <Globe className="h-4 w-4 text-primary" />
               <span className="font-mono">{systemInfo.ip}</span>
@@ -167,11 +167,12 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="pt-6 border-t border-border/40">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="pt-6 border-t border-border/40 text-center">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-4">
             <p className="text-sm text-muted-foreground">
               © 2025 GhostID. All rights reserved.
             </p>
+            <span className="hidden md:inline text-muted-foreground">•</span>
             <div className="flex gap-6">
               <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Terms
