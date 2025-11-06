@@ -203,20 +203,67 @@ ghost.on('sessionExpired', () => {
 
             <TabsContent value="simulator" className="space-y-6">
               <NPMSimulator />
-              <div className="bg-card border border-border/50 rounded-xl p-6">
-                <h3 className="font-semibold mb-4">What gets installed?</h3>
-                <div className="space-y-2 text-sm text-muted-foreground">
-                  <div className="flex items-center gap-2">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="bg-card border border-border/50 rounded-xl p-6">
+                  <h3 className="font-semibold mb-4 flex items-center gap-2">
                     <Package className="h-4 w-4 text-primary" />
-                    <code className="text-primary">@ghostid/sdk</code> - Core SDK package
+                    What gets installed?
+                  </h3>
+                  <div className="space-y-2 text-sm text-muted-foreground">
+                    <div className="flex items-center gap-2">
+                      <div className="h-1.5 w-1.5 rounded-full bg-primary" />
+                      <code className="text-primary">@ghostid/sdk</code> - Core SDK package
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="h-1.5 w-1.5 rounded-full bg-primary" />
+                      <code className="text-primary">zk-circuits</code> - Zero-knowledge proof circuits
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="h-1.5 w-1.5 rounded-full bg-primary" />
+                      <code className="text-primary">crypto-utils</code> - Cryptographic utilities
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Package className="h-4 w-4 text-primary" />
-                    <code className="text-primary">zk-circuits</code> - Zero-knowledge proof circuits
+                </div>
+
+                <div className="bg-card border border-border/50 rounded-xl p-6">
+                  <h3 className="font-semibold mb-4 flex items-center gap-2">
+                    <Zap className="h-4 w-4 text-primary" />
+                    System Requirements
+                  </h3>
+                  <div className="space-y-2 text-sm text-muted-foreground">
+                    <div className="flex items-center gap-2">
+                      <div className="h-1.5 w-1.5 rounded-full bg-green-500" />
+                      Node.js 16.x or higher
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="h-1.5 w-1.5 rounded-full bg-green-500" />
+                      npm 7+ or yarn 1.22+
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="h-1.5 w-1.5 rounded-full bg-green-500" />
+                      TypeScript 4.5+ (optional)
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Package className="h-4 w-4 text-primary" />
-                    <code className="text-primary">crypto-utils</code> - Cryptographic utilities
+                </div>
+
+                <div className="bg-card border border-border/50 rounded-xl p-6">
+                  <h3 className="font-semibold mb-4 flex items-center gap-2">
+                    <Shield className="h-4 w-4 text-primary" />
+                    Bundle Size
+                  </h3>
+                  <div className="space-y-2 text-sm text-muted-foreground">
+                    <div className="flex items-center justify-between">
+                      <span>Minified</span>
+                      <code className="text-primary">45 kB</code>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span>Gzipped</span>
+                      <code className="text-primary">12 kB</code>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span>Tree-shakeable</span>
+                      <code className="text-green-500">✓ Yes</code>
+                    </div>
                   </div>
                 </div>
               </div>
