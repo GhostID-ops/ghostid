@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Wallet, Shield, Clock } from "lucide-react";
+import AnimatedText from "./AnimatedText";
 
 const steps = [
   {
@@ -25,18 +26,16 @@ const HowItWorks = () => {
       <div className="absolute inset-0 gradient-glow opacity-30" />
       
       <div className="container mx-auto px-4 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">How It Works</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Three simple steps to anonymous authentication
-          </p>
-        </motion.div>
+        <div className="text-center mb-16">
+          <AnimatedText type="glitch" className="inline-block">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">How It Works</h2>
+          </AnimatedText>
+          <AnimatedText delay={0.2}>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Three simple steps to anonymous authentication
+            </p>
+          </AnimatedText>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {steps.map((step, index) => (

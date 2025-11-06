@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Eye, Key, Database, Code, Timer, Shield } from "lucide-react";
+import AnimatedText from "./AnimatedText";
 
 const features = [
   {
@@ -38,18 +39,16 @@ const FeaturesGrid = () => {
   return (
     <section id="features" className="py-24 bg-card/30">
       <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Features</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Privacy-first authentication powered by zero-knowledge proofs
-          </p>
-        </motion.div>
+        <div className="text-center mb-16">
+          <AnimatedText type="slide" className="inline-block">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Features</h2>
+          </AnimatedText>
+          <AnimatedText delay={0.2}>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Privacy-first authentication powered by zero-knowledge proofs
+            </p>
+          </AnimatedText>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (

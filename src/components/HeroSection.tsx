@@ -65,7 +65,19 @@ const HeroSection = () => {
           className="text-5xl md:text-7xl font-bold mb-6 tracking-tight"
         >
           Sign in without <br />
-          <span className="text-gradient">being seen</span>
+          <motion.span 
+            className="text-gradient inline-block"
+            animate={{
+              filter: ["blur(0px)", "blur(2px)", "blur(0px)"],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              repeatDelay: 2,
+            }}
+          >
+            being seen
+          </motion.span>
         </motion.h1>
 
         <motion.p
@@ -83,13 +95,39 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <Button
-            asChild
-            size="lg"
-            className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold ghost-glow"
-          >
-            <Link to="/app">Launch App</Link>
-          </Button>
+          <div className="relative inline-block">
+            <motion.div
+              className="absolute -top-1 -right-1 h-3 w-3 bg-primary rounded-full"
+              animate={{
+                scale: [1, 1.2, 1],
+                opacity: [1, 0.8, 1],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+            <motion.div
+              className="absolute -top-1 -right-1 h-3 w-3 bg-primary rounded-full"
+              animate={{
+                scale: [1, 2, 1],
+                opacity: [0.5, 0, 0.5],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+            <Button
+              asChild
+              size="lg"
+              className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold ghost-glow relative"
+            >
+              <Link to="/app">Launch App</Link>
+            </Button>
+          </div>
           <Button
             asChild
             size="lg"

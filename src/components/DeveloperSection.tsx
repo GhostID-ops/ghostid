@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Code2 } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
+import AnimatedText from "./AnimatedText";
 
 const DeveloperSection = () => {
   const [email, setEmail] = useState("");
@@ -40,16 +41,30 @@ const DeveloperSection = () => {
           <div className="bg-card border border-border/50 rounded-2xl p-8 md:p-12">
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="flex-1">
-                <div className="inline-flex p-3 rounded-xl bg-primary/10 text-primary mb-4">
+                <motion.div 
+                  className="inline-flex p-3 rounded-xl bg-primary/10 text-primary mb-4"
+                  animate={{
+                    rotate: [0, 5, -5, 0],
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                >
                   <Code2 className="h-8 w-8" />
-                </div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                  Build with GhostID
-                </h2>
-                <p className="text-muted-foreground mb-6">
-                  Integrate privacy-first authentication into your dapp with our developer SDK.
-                  Simple setup, powerful privacy.
-                </p>
+                </motion.div>
+                <AnimatedText type="fade">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                    Build with GhostID
+                  </h2>
+                </AnimatedText>
+                <AnimatedText delay={0.2}>
+                  <p className="text-muted-foreground mb-6">
+                    Integrate privacy-first authentication into your dapp with our developer SDK.
+                    Simple setup, powerful privacy.
+                  </p>
+                </AnimatedText>
                 <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
                   <Input
                     type="email"
@@ -69,7 +84,13 @@ const DeveloperSection = () => {
                 </form>
               </div>
               
-              <div className="flex-1 bg-background/50 border border-border/50 rounded-xl p-5 font-mono text-xs leading-relaxed space-y-3">
+              <motion.div 
+                className="flex-1 bg-background/50 border border-border/50 rounded-xl p-5 font-mono text-xs leading-relaxed space-y-3"
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
                 <div>
                   <div className="text-muted-foreground mb-1 text-[10px]">// Install SDK</div>
                   <code className="text-primary">npm install @ghostid/sdk</code>
@@ -111,7 +132,7 @@ const DeveloperSection = () => {
                     {'console.log("Anonymous user:", isValid);'}
                   </code>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </motion.div>
