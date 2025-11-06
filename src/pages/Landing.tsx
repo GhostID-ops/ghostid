@@ -8,7 +8,6 @@ import Footer from "@/components/Footer";
 import BackgroundMusic from "@/components/BackgroundMusic";
 import ParticleEffect from "@/components/ParticleEffect";
 import ScrollProgress from "@/components/ScrollProgress";
-import SpotlightCursor from "@/components/SpotlightCursor";
 import GridBackground from "@/components/GridBackground";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
@@ -26,7 +25,6 @@ const Landing = () => {
   return (
     <div ref={ref} className="min-h-screen bg-background">
       <GridBackground />
-      <SpotlightCursor />
       <ScrollProgress />
       <ParticleEffect />
       <BackgroundMusic />
