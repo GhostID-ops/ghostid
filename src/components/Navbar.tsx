@@ -62,9 +62,6 @@ const Navbar = () => {
             <a href="/#about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               About
             </a>
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Docs
-            </a>
           </div>
 
           <div className="flex items-center gap-3">
