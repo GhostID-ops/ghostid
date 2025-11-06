@@ -26,26 +26,6 @@ GhostID’s goal is to make privacy **a native feature** of blockchain authentic
 
 ---
 
-## ⚙️ Tech Stack
-
-- **Frontend:** Next.js + React + TailwindCSS  
-- **Animation:** Framer Motion  
-- **Web3 Integration:** WalletConnect + wagmi + ethers.js  
-- **Storage:** Local/session storage (ephemeral session data)   
-
----
-
-## 🧠 Features
-
-- ✅ Anonymous wallet connection  
-- ✅ Temporary zk-token simulation  
-- ✅ Session lifetime timer  
-- ✅ Fake ZK proof hash generator  
-- ✅ Responsive dark UI with violet-cyan gradient accents  
-- ✅ Smooth transitions and “ghost fade” animations  
-
----
-
 ## 📁 Project Structure
 
 /ghostid
