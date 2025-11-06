@@ -5,7 +5,7 @@ const Changelog = () => {
   const releases = [
     {
       version: "2.1.0",
-      date: "2025-01-10",
+      date: "2025-11-06",
       type: "minor",
       changes: [
         { icon: Star, type: "feature", text: "Added support for multi-chain authentication" },
@@ -15,7 +15,7 @@ const Changelog = () => {
     },
     {
       version: "2.0.3",
-      date: "2025-01-03",
+      date: "2025-10-28",
       type: "patch",
       changes: [
         { icon: Bug, type: "fix", text: "Fixed token refresh race condition" },
@@ -25,7 +25,7 @@ const Changelog = () => {
     },
     {
       version: "2.0.0",
-      date: "2024-12-20",
+      date: "2025-10-15",
       type: "major",
       changes: [
         { icon: Star, type: "feature", text: "Complete rewrite with TypeScript 5.0" },
@@ -37,7 +37,7 @@ const Changelog = () => {
     },
     {
       version: "1.5.2",
-      date: "2024-12-01",
+      date: "2025-09-20",
       type: "patch",
       changes: [
         { icon: Bug, type: "fix", text: "Fixed wallet connection timeout on slow networks" },
@@ -46,7 +46,7 @@ const Changelog = () => {
     },
     {
       version: "1.5.0",
-      date: "2024-11-15",
+      date: "2025-09-01",
       type: "minor",
       changes: [
         { icon: Star, type: "feature", text: "Added session event listeners" },
