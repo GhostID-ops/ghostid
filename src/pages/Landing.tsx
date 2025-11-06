@@ -9,6 +9,7 @@ import BackgroundMusic from "@/components/BackgroundMusic";
 import ParticleEffect from "@/components/ParticleEffect";
 import ScrollProgress from "@/components/ScrollProgress";
 import GridBackground from "@/components/GridBackground";
+import ScrollToTop from "@/components/ScrollToTop";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
@@ -26,6 +27,7 @@ const Landing = () => {
     <div ref={ref} className="min-h-screen bg-background">
       <GridBackground />
       <ScrollProgress />
+      <ScrollToTop />
       <ParticleEffect />
       <BackgroundMusic />
       <Navbar />
