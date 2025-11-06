@@ -46,7 +46,7 @@ const Navbar = () => {
             <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
               <Ghost className="h-6 w-6 text-primary" />
             </div>
-            <span className="font-bold text-xl font-orbitron">GhostID</span>
+            <span className="font-bold text-xl font-montserrat">GhostID</span>
           </Link>
 
           <div className="hidden md:flex items-center gap-6">
@@ -59,6 +59,9 @@ const Navbar = () => {
             <Link to="/sdk" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               SDK
             </Link>
+            <Link to="/docs" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              Docs
+            </Link>
             <a href="/#about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               About
             </a>
@@ -67,16 +70,6 @@ const Navbar = () => {
           <div className="flex items-center gap-3">
             {location.pathname === '/' ? (
               <>
-                <Button
-                  asChild
-                  variant="outline"
-                  className="border-primary/20 hover:bg-primary/10"
-                >
-                  <a href="https://docs.ghostid.dev" target="_blank" rel="noopener noreferrer">
-                    <BookOpen className="mr-2 h-4 w-4" />
-                    Docs
-                  </a>
-                </Button>
                 <Button
                   onClick={handleLaunchApp}
                   disabled={isNavigating}
