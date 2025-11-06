@@ -8,6 +8,7 @@ import { createWeb3Modal } from "@web3modal/wagmi/react";
 import { config, projectId } from "./config/web3";
 import Landing from "./pages/Landing";
 import AppPage from "./pages/App";
+import SDK from "./pages/SDK";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,6 +34,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/app" element={<AppPage />} />
+            <Route path="/sdk" element={<SDK />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
