@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Eye, Key, Database, Code, Timer } from "lucide-react";
+import { Eye, Key, Database, Code, Timer, Shield } from "lucide-react";
 
 const features = [
   {
@@ -26,6 +26,11 @@ const features = [
     icon: Timer,
     title: "Stealth Sessions",
     description: "Auto-expire for maximum security.",
+  },
+  {
+    icon: Shield,
+    title: "Chain Agnostic",
+    description: "Works across all EVM networks.",
   },
 ];
 

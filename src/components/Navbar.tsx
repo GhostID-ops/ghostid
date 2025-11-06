@@ -30,8 +30,17 @@ const Navbar = () => {
             <Link to="/app" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               App
             </Link>
+            <a href="#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              Features
+            </a>
+            <a href="#sdk" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              SDK
+            </a>
             <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Docs
+            </a>
+            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              About
             </a>
           </div>
 

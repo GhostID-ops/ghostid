@@ -18,26 +18,30 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
       </div>
 
-      {/* Animated Particles */}
-      <div className="absolute inset-0 z-0">
-        {[...Array(20)].map((_, i) => (
+      {/* Floating Ghost */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        {[...Array(5)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-primary rounded-full"
+            className="absolute opacity-20"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
             }}
             animate={{
-              y: [0, -30, 0],
-              opacity: [0, 1, 0],
+              y: [0, -50, 0],
+              x: [0, 30, 0],
+              rotate: [0, 10, -10, 0],
+              opacity: [0.1, 0.3, 0.1],
             }}
             transition={{
-              duration: 3 + Math.random() * 2,
+              duration: 8 + Math.random() * 4,
               repeat: Infinity,
-              delay: Math.random() * 2,
+              delay: Math.random() * 3,
             }}
-          />
+          >
+            <img src={ghostLogo} alt="" className="h-16 w-16" />
+          </motion.div>
         ))}
       </div>
 

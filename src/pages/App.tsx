@@ -178,7 +178,7 @@ const AppPage = () => {
                   </p>
                 </div>
 
-                <TerminalAnimation />
+                <TerminalAnimation walletAddress={address} />
 
                 <div className="mt-8 text-center">
                   <Button

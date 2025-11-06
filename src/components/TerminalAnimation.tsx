@@ -1,19 +1,22 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const terminalCommands = [
-  "$ initializing zkp_module...",
-  "> generating proof parameters",
-  "> commitment: 0x7f8e9a2b...",
-  "> witness generation: COMPLETE",
-  "$ verifying circuit constraints",
-  "> proof validation: SUCCESS",
-  "$ creating anonymous identity",
-  "> session_token: GENERATED",
-  "$ GhostID ready.",
-];
+interface TerminalAnimationProps {
+  walletAddress?: string;
+}
 
-const TerminalAnimation = () => {
+const TerminalAnimation = ({ walletAddress }: TerminalAnimationProps) => {
+  const terminalCommands = [
+    "$ initializing zkp_module...",
+    "> generating proof parameters",
+    `> commitment: ${walletAddress || '0x7f8e9a2b...'}`,
+    "> witness generation: COMPLETE",
+    "$ verifying circuit constraints",
+    "> proof validation: SUCCESS",
+    "$ creating anonymous identity",
+    "> session_token: GENERATED",
+    "$ GhostID ready.",
+  ];
   const [lines, setLines] = useState<string[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
