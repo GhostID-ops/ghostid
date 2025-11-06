@@ -73,8 +73,6 @@ const GridBackground = () => {
         ref={canvasRef}
         className="w-full h-full opacity-40"
       />
-      {/* Gradient overlay for depth */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
     </motion.div>
   );
 };
