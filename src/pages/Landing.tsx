@@ -5,6 +5,7 @@ import FeaturesGrid from "@/components/FeaturesGrid";
 import DeveloperSection from "@/components/DeveloperSection";
 import AboutSection from "@/components/AboutSection";
 import Footer from "@/components/Footer";
+import SystemInfoBar from "@/components/SystemInfoBar";
 import ParticleEffect from "@/components/ParticleEffect";
 import ScrollProgress from "@/components/ScrollProgress";
 import GridBackground from "@/components/GridBackground";
@@ -65,6 +66,7 @@ const Landing = () => {
         <AboutSection />
       </motion.div>
       <Footer />
+      <SystemInfoBar />
     </div>
   );
 };

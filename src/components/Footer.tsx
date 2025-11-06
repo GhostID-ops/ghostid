@@ -25,16 +25,21 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Product</h4>
+            <h4 className="font-semibold mb-4">Navigation</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/app" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Launch App
+                <Link to="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Home
                 </Link>
               </li>
               <li>
-                <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Documentation
+                <a href="/#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Features
+                </a>
+              </li>
+              <li>
+                <a href="/#about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  About
                 </a>
               </li>
             </ul>
@@ -44,14 +49,19 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Developers</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/sdk" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   SDK
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/docs" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Documentation
+                </Link>
+              </li>
+              <li>
+                <Link to="/api" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   API Reference
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

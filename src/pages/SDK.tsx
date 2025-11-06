@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SystemInfoBar from "@/components/SystemInfoBar";
 import { Copy, Check, Terminal, Book, Code2, Zap, Shield, Package } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -149,15 +151,17 @@ ghost.on('sessionExpired', () => {
             Integrate privacy-first authentication into your dApp with just a few lines of code.
             Built for developers who value user privacy.
           </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground ghost-glow">
-              <Book className="mr-2 h-5 w-5" />
-              Documentation
-            </Button>
-            <Button size="lg" variant="outline" className="border-primary/20 hover:bg-primary/10">
-              View on GitHub
-            </Button>
-          </div>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Link to="/docs">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground ghost-glow">
+                  <Book className="mr-2 h-5 w-5" />
+                  Documentation
+                </Button>
+              </Link>
+              <Button size="lg" variant="outline" className="border-primary/20 hover:bg-primary/10">
+                View on GitHub
+              </Button>
+            </div>
         </motion.div>
 
         {/* Features Grid */}
@@ -501,6 +505,7 @@ ghost.on('sessionExpired', () => {
       </main>
 
       <Footer />
+      <SystemInfoBar />
     </div>
   );
 };
