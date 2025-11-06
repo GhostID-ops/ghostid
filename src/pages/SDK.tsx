@@ -6,6 +6,9 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { toast } from "sonner";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import NPMSimulator from "@/components/sdk/NPMSimulator";
+import CodePlayground from "@/components/sdk/CodePlayground";
+import Changelog from "@/components/sdk/Changelog";
 
 const SDK = () => {
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
@@ -185,16 +188,51 @@ ghost.on('sessionExpired', () => {
           transition={{ delay: 0.3 }}
           className="mb-16"
         >
-          <h2 className="text-3xl font-bold mb-8 text-center">Quick Start Guide</h2>
+          <h2 className="text-3xl font-bold mb-2 text-center">Quick Start Guide</h2>
+          <p className="text-center text-muted-foreground mb-8">
+            Watch the installation in action or jump to code examples
+          </p>
           
-          <Tabs defaultValue="installation" className="max-w-5xl mx-auto">
-            <TabsList className="grid w-full grid-cols-3 mb-8">
-              <TabsTrigger value="installation">Installation</TabsTrigger>
+          <Tabs defaultValue="simulator" className="max-w-5xl mx-auto">
+            <TabsList className="grid w-full grid-cols-4 mb-8">
+              <TabsTrigger value="simulator">Installation</TabsTrigger>
               <TabsTrigger value="basic">Basic Usage</TabsTrigger>
               <TabsTrigger value="advanced">Advanced</TabsTrigger>
+              <TabsTrigger value="playground">Playground</TabsTrigger>
             </TabsList>
 
-            <TabsContent value="installation" className="space-y-6">
+            <TabsContent value="simulator" className="space-y-6">
+              <NPMSimulator />
+              <div className="bg-card border border-border/50 rounded-xl p-6">
+                <h3 className="font-semibold mb-4">What gets installed?</h3>
+                <div className="space-y-2 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-2">
+                    <Package className="h-4 w-4 text-primary" />
+                    <code className="text-primary">@ghostid/sdk</code> - Core SDK package
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Package className="h-4 w-4 text-primary" />
+                    <code className="text-primary">zk-circuits</code> - Zero-knowledge proof circuits
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Package className="h-4 w-4 text-primary" />
+                    <code className="text-primary">crypto-utils</code> - Cryptographic utilities
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
+
+            <TabsContent value="playground" className="space-y-6">
+              <div className="mb-4">
+                <h3 className="text-xl font-semibold mb-2">Interactive Playground</h3>
+                <p className="text-muted-foreground">
+                  Test SDK methods in real-time and see the output instantly
+                </p>
+              </div>
+              <CodePlayground />
+            </TabsContent>
+
+            <TabsContent value="basic" className="space-y-6">
               {codeBlocks.slice(0, 2).map((block, index) => (
                 <div key={index} className="bg-card border border-border/50 rounded-xl overflow-hidden">
                   <div className="flex items-center justify-between px-6 py-3 border-b border-border/50">
@@ -376,11 +414,25 @@ ghost.on('sessionExpired', () => {
           </div>
         </motion.div>
 
-        {/* Support Section */}
+        {/* Changelog */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
+          className="mb-16 max-w-5xl mx-auto"
+        >
+          <h2 className="text-3xl font-bold mb-2 text-center">Version History</h2>
+          <p className="text-center text-muted-foreground mb-8">
+            Track the evolution of GhostID SDK with detailed release notes
+          </p>
+          <Changelog />
+        </motion.div>
+
+        {/* Support Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
           className="bg-card/50 border border-primary/20 rounded-2xl p-8 md:p-12 text-center max-w-3xl mx-auto"
         >
           <h2 className="text-2xl md:text-3xl font-bold mb-4">Need Help?</h2>
