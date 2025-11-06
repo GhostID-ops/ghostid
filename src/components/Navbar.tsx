@@ -40,36 +40,35 @@ const Navbar = () => {
     <>
       <GlitchTransition isVisible={showGlitch} onComplete={handleGlitchComplete} />
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/40 backdrop-blur-lg bg-background/80">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-              <Ghost className="h-6 w-6 text-primary" />
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-16">
+            <Link to="/" className="flex items-center gap-2 group">
+              <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                <Ghost className="h-6 w-6 text-primary" />
+              </div>
+              <span className="font-bold text-xl font-montserrat">GhostID</span>
+            </Link>
+
+            <div className="hidden md:flex items-center gap-6">
+              <Link to="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                Home
+              </Link>
+              <a href="/#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                Features
+              </a>
+              <Link to="/sdk" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                SDK
+              </Link>
+              <Link to="/docs" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                Docs
+              </Link>
+              <a href="/#about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                About
+              </a>
             </div>
-            <span className="font-bold text-xl font-montserrat">GhostID</span>
-          </Link>
 
-          <div className="hidden md:flex items-center gap-6">
-            <Link to="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Home
-            </Link>
-            <a href="/#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Features
-            </a>
-            <Link to="/sdk" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              SDK
-            </Link>
-            <Link to="/docs" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Docs
-            </Link>
-            <a href="/#about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              About
-            </a>
-          </div>
-
-          <div className="flex items-center gap-3">
-            {location.pathname === '/' ? (
-              <>
+            <div className="flex items-center gap-3">
+              {location.pathname === '/' ? (
                 <Button
                   onClick={handleLaunchApp}
                   disabled={isNavigating}
@@ -78,17 +77,16 @@ const Navbar = () => {
                   <Zap className="mr-2 h-4 w-4" />
                   Launch App
                 </Button>
-              </>
-            ) : (
-              <Button
-                onClick={() => open()}
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold ghost-glow"
-              >
-                {isConnected ? truncateAddress(address!) : "Connect Wallet"}
-              </Button>
-            )}
+              ) : (
+                <Button
+                  onClick={() => open()}
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold ghost-glow"
+                >
+                  {isConnected ? truncateAddress(address!) : "Connect Wallet"}
+                </Button>
+              )}
+            </div>
           </div>
-        </div>
         </div>
       </nav>
     </>
