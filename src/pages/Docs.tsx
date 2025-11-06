@@ -17,7 +17,6 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import SystemInfoBar from "@/components/SystemInfoBar";
 
 const Docs = () => {
   const [selectedSection, setSelectedSection] = useState("introduction");
@@ -871,7 +870,6 @@ if (verification.valid) {
       </div>
 
       <Footer />
-      <SystemInfoBar />
     </div>
   );
 };

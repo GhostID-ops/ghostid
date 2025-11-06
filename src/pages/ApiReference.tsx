@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import SystemInfoBar from "@/components/SystemInfoBar";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -260,7 +259,6 @@ const ApiReference = () => {
         </div>
       </main>
       <Footer />
-      <SystemInfoBar />
     </div>
   );
 };

@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import SystemInfoBar from "@/components/SystemInfoBar";
 import { Copy, Check, Terminal, Book, Code2, Zap, Shield, Package } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -505,7 +504,6 @@ ghost.on('sessionExpired', () => {
       </main>
 
       <Footer />
-      <SystemInfoBar />
     </div>
   );
 };
