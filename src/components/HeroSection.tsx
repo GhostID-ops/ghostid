@@ -53,8 +53,8 @@ const HeroSection = () => {
           transition={{ duration: 0.6 }}
           className="mb-8"
         >
-          <div className="inline-block p-4 rounded-2xl bg-primary/10 backdrop-blur-sm ghost-glow mb-6 animate-float">
-            <img src={ghostLogo} alt="GhostID Logo" className="h-24 w-24" />
+          <div className="inline-block p-6 rounded-2xl bg-primary/5 backdrop-blur-sm border border-primary/10 mb-6 animate-float">
+            <Ghost className="h-24 w-24 text-primary" />
           </div>
         </motion.div>
 
