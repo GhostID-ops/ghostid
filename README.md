@@ -1,73 +1,82 @@
-# Welcome to your Lovable project
+# 👻 GhostID — Sign In Without Being Seen
 
-## Project info
+**Anonymous Web3 Authentication Powered by Zero-Knowledge Proofs**
 
-**URL**: https://lovable.dev/projects/28a70e15-beaa-47d2-8290-7f4159691577
+GhostID is a **privacy-focused authentication layer for Web3** that lets users connect to decentralized apps without exposing their wallet addresses.  
+Instead of logging in with a public key, users generate **temporary zk-tokens** that prove ownership — not identity.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🌐 Live Demo
+**Website:** [ghostid.network](https://ghostid.network)  
+**App:** [ghostid.network/app](https://ghostid.network/app)
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/28a70e15-beaa-47d2-8290-7f4159691577) and start prompting.
+## 🧩 Core Concept
 
-Changes made via Lovable will be committed automatically to this repo.
+| Step | Description |
+|------|--------------|
+| **1. Connect Wallet (Privately)** | The user connects a wallet through WalletConnect — no wallet data stored. |
+| **2. Generate GhostID Token** | A short-lived, mock zero-knowledge token is created and signed. |
+| **3. Authenticate Anonymously** | The token can be used by dapps or partners for one-time access. |
+| **4. Expire and Vanish** | Tokens self-destruct after 15 minutes, leaving no trace. |
 
-**Use your preferred IDE**
+GhostID’s goal is to make privacy **a native feature** of blockchain authentication.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## ⚙️ Tech Stack
 
-Follow these steps:
+- **Frontend:** Next.js + React + TailwindCSS  
+- **Animation:** Framer Motion  
+- **Web3 Integration:** WalletConnect + wagmi + ethers.js  
+- **Storage:** Local/session storage (ephemeral session data)   
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 🧠 Features
 
-# Step 3: Install the necessary dependencies.
-npm i
+- ✅ Anonymous wallet connection  
+- ✅ Temporary zk-token simulation  
+- ✅ Session lifetime timer  
+- ✅ Fake ZK proof hash generator  
+- ✅ Responsive dark UI with violet-cyan gradient accents  
+- ✅ Smooth transitions and “ghost fade” animations  
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+---
 
-**Edit a file directly in GitHub**
+## 📁 Project Structure
+/ghostid
+├── /pages
+│ ├── index.tsx → Landing page
+│ ├── app.tsx → Functional dashboard
+│
+├── /components
+│ ├── WalletConnectButton.tsx
+│ ├── TokenStatusCard.tsx
+│ └── CountdownTimer.tsx
+│
+├── /assets
+│ ├── logo.svg
+│ └── animations/
+│
+├── /styles
+│ └── globals.css
+│
+├── /lib
+│ └── zkToken.ts → Mock ZK token generator
+│
+├── package.json
+└── README.md
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🚀 Getting Started
 
-## What technologies are used for this project?
+### 1. Clone the Repo
+```bash
+git clone https://github.com/ghostid-ops/ghostid.git
+cd ghostid
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/28a70e15-beaa-47d2-8290-7f4159691577) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
