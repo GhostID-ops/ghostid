@@ -85,60 +85,60 @@ const Changelog = () => {
   };
 
   return (
-    <div className="space-y-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {releases.map((release, index) => (
         <motion.div
           key={release.version}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: index * 0.1 }}
-          className="bg-card border border-border/50 rounded-xl p-6"
+          className="bg-card border border-border/50 rounded-xl p-5 flex flex-col h-full"
         >
-          <div className="flex items-center gap-3 mb-4">
-            <div className="inline-flex p-2 rounded-lg bg-primary/10">
-              <Package className="h-5 w-5 text-primary" />
+          <div className="flex items-center gap-2 mb-4">
+            <div className="inline-flex p-2 rounded-lg bg-primary/10 flex-shrink-0">
+              <Package className="h-4 w-4 text-primary" />
             </div>
-            <div className="flex-1">
-              <div className="flex items-center gap-2">
-                <h3 className="text-xl font-semibold">v{release.version}</h3>
+            <div className="min-w-0 flex-1">
+              <div className="flex items-center gap-2 flex-wrap">
+                <h3 className="text-lg font-semibold">v{release.version}</h3>
                 <span
-                  className={`text-xs px-2 py-1 rounded border ${getTypeColor(
+                  className={`text-xs px-2 py-0.5 rounded border ${getTypeColor(
                     release.type
                   )}`}
                 >
                   {release.type}
                 </span>
               </div>
-              <p className="text-sm text-muted-foreground">{release.date}</p>
+              <p className="text-xs text-muted-foreground">{release.date}</p>
             </div>
           </div>
 
-          <div className="space-y-2">
+          <div className="space-y-2 flex-1">
             {release.changes.map((change, changeIndex) => {
               const IconComponent = change.icon;
               return (
                 <div
                   key={changeIndex}
-                  className="flex items-start gap-3 text-sm"
+                  className="flex items-start gap-2 text-xs"
                 >
                   <IconComponent
-                    className={`h-4 w-4 mt-0.5 ${getChangeColor(change.type)}`}
+                    className={`h-3.5 w-3.5 mt-0.5 flex-shrink-0 ${getChangeColor(change.type)}`}
                   />
-                  <span className="text-muted-foreground">{change.text}</span>
+                  <span className="text-muted-foreground leading-relaxed">{change.text}</span>
                 </div>
               );
             })}
           </div>
 
           {index === 0 && (
-            <div className="mt-4 pt-4 border-t border-border/50">
+            <div className="mt-4 pt-3 border-t border-border/50">
               <span className="text-xs text-primary font-semibold">Latest Release</span>
             </div>
           )}
         </motion.div>
       ))}
 
-      <div className="text-center">
+      <div className="col-span-1 md:col-span-2 lg:col-span-3 text-center pt-4">
         <a
           href="#"
           className="text-sm text-primary hover:underline"
