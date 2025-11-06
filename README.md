@@ -47,6 +47,7 @@ GhostID’s goal is to make privacy **a native feature** of blockchain authentic
 ---
 
 ## 📁 Project Structure
+
 /ghostid
 ├── /pages
 │ ├── index.tsx → Landing page
