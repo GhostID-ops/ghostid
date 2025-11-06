@@ -45,36 +45,36 @@ const SessionCard = ({ tokenId, expiresIn, onRegenerate }: SessionCardProps) => 
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.4 }}
-      className="bg-card border border-primary/50 rounded-xl p-6 ghost-glow"
+      className="bg-card border border-primary/20 rounded-xl p-6 ghost-glow"
     >
       <div className="flex items-start justify-between mb-4">
         <div>
           <div className="flex items-center gap-2 mb-2">
-            <CheckCircle2 className="h-5 w-5 text-primary" />
-            <h3 className="text-xl font-semibold">GhostID Active</h3>
+            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+            <h3 className="text-xl font-semibold font-mono">GHOSTID_ACTIVE</h3>
           </div>
-          <p className="text-sm text-muted-foreground">Your anonymous session is live</p>
+          <p className="text-sm text-muted-foreground">Zero-knowledge session authenticated</p>
         </div>
         <Button
           variant="outline"
           size="sm"
           onClick={onRegenerate}
-          className="border-primary/20 hover:bg-primary/10"
+          className="border-primary/20 hover:bg-primary/10 font-mono"
         >
           <RefreshCw className="h-4 w-4 mr-2" />
-          Regenerate
+          REGEN
         </Button>
       </div>
 
       <div className="space-y-4">
-        <div className="bg-background/50 rounded-lg p-4">
+        <div className="bg-black/30 border border-primary/10 rounded-lg p-4">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-sm font-medium">ZK Proof Hash</span>
+            <span className="text-sm font-medium font-mono">ZK_PROOF_HASH</span>
             <Button
               variant="ghost"
               size="sm"
               onClick={handleCopy}
-              className="h-8 px-2 text-muted-foreground hover:text-foreground"
+              className="h-8 px-2 text-muted-foreground hover:text-primary font-mono"
             >
               {copied ? (
                 <CheckCircle2 className="h-4 w-4 text-primary" />
@@ -83,13 +83,13 @@ const SessionCard = ({ tokenId, expiresIn, onRegenerate }: SessionCardProps) => 
               )}
             </Button>
           </div>
-          <code className="text-xs text-primary font-mono break-all">{tokenId}</code>
+          <code className="text-xs text-primary font-mono break-all terminal-glow">{tokenId}</code>
         </div>
 
         <div>
           <div className="flex items-center justify-between mb-2">
-            <span className="text-sm font-medium">Session Lifetime</span>
-            <span className="text-sm font-mono text-muted-foreground">
+            <span className="text-sm font-medium font-mono">SESSION_TTL</span>
+            <span className="text-sm font-mono text-primary terminal-glow">
               {minutes}:{seconds.toString().padStart(2, "0")}
             </span>
           </div>
