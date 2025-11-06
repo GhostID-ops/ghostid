@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Ghost, Zap } from "lucide-react";
+import { Ghost, Zap, BookOpen } from "lucide-react";
 import { useWeb3Modal } from "@web3modal/wagmi/react";
 import { useAccount } from "wagmi";
 import { useState } from "react";
@@ -68,23 +68,35 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center gap-3">
-            {location.pathname === '/' && (
+            {location.pathname === '/' ? (
+              <>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="border-primary/20 hover:bg-primary/10"
+                >
+                  <a href="https://docs.ghostid.dev" target="_blank" rel="noopener noreferrer">
+                    <BookOpen className="mr-2 h-4 w-4" />
+                    Docs
+                  </a>
+                </Button>
+                <Button
+                  onClick={handleLaunchApp}
+                  disabled={isNavigating}
+                  className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-primary-foreground font-semibold ghost-glow"
+                >
+                  <Zap className="mr-2 h-4 w-4" />
+                  Launch App
+                </Button>
+              </>
+            ) : (
               <Button
-                onClick={handleLaunchApp}
-                disabled={isNavigating}
-                className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-primary-foreground font-semibold ghost-glow"
+                onClick={() => open()}
+                className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold ghost-glow"
               >
-                <Zap className="mr-2 h-4 w-4" />
-                Launch App
+                {isConnected ? truncateAddress(address!) : "Connect Wallet"}
               </Button>
             )}
-            <Button
-              onClick={() => open()}
-              variant={location.pathname === '/' ? "outline" : "default"}
-              className={location.pathname === '/' ? "border-primary/20 hover:bg-primary/10" : "bg-primary hover:bg-primary/90 text-primary-foreground font-semibold ghost-glow"}
-            >
-              {isConnected ? truncateAddress(address!) : "Connect Wallet"}
-            </Button>
           </div>
         </div>
         </div>
