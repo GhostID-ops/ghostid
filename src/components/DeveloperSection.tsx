@@ -69,17 +69,16 @@ const DeveloperSection = () => {
                 </form>
               </div>
               
-              <div className="flex-1 bg-background/50 border border-border/50 rounded-xl p-6 font-mono text-sm space-y-4">
+              <div className="flex-1 bg-background/50 border border-border/50 rounded-xl p-5 font-mono text-xs leading-relaxed space-y-3">
                 <div>
-                  <div className="text-muted-foreground mb-2">// Install SDK</div>
+                  <div className="text-muted-foreground mb-1 text-[10px]">// Install SDK</div>
                   <code className="text-primary">npm install @ghostid/sdk</code>
                 </div>
                 
                 <div>
-                  <div className="text-muted-foreground mb-2">// Initialize</div>
-                  <code className="text-secondary block">
+                  <div className="text-muted-foreground mb-1 text-[10px]">// Initialize</div>
+                  <code className="text-secondary block leading-5">
                     {'import { GhostID } from "@ghostid/sdk";'}
-                    <br />
                     <br />
                     {'const ghost = new GhostID({'}
                     <br />
@@ -92,8 +91,8 @@ const DeveloperSection = () => {
                 </div>
 
                 <div>
-                  <div className="text-muted-foreground mb-2">// Generate ZK Token</div>
-                  <code className="text-primary block">
+                  <div className="text-muted-foreground mb-1 text-[10px]">// Generate ZK Token</div>
+                  <code className="text-primary block leading-5">
                     {'const token = await ghost.generateToken({'}
                     <br />
                     {'  wallet: userAddress,'}
@@ -105,8 +104,8 @@ const DeveloperSection = () => {
                 </div>
 
                 <div>
-                  <div className="text-muted-foreground mb-2">// Verify Authentication</div>
-                  <code className="text-secondary block">
+                  <div className="text-muted-foreground mb-1 text-[10px]">// Verify Authentication</div>
+                  <code className="text-secondary block leading-5">
                     {'const isValid = await ghost.verify(token);'}
                     <br />
                     {'console.log("Anonymous user:", isValid);'}

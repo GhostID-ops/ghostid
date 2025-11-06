@@ -23,7 +23,7 @@ const HeroSection = () => {
         {[...Array(5)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute opacity-20"
+            className="absolute"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -32,7 +32,7 @@ const HeroSection = () => {
               y: [0, -50, 0],
               x: [0, 30, 0],
               rotate: [0, 10, -10, 0],
-              opacity: [0.1, 0.3, 0.1],
+              opacity: [0.05, 0.15, 0.05],
             }}
             transition={{
               duration: 8 + Math.random() * 4,
@@ -40,7 +40,7 @@ const HeroSection = () => {
               delay: Math.random() * 3,
             }}
           >
-            <img src={ghostLogo} alt="" className="h-16 w-16" />
+            <img src={ghostLogo} alt="" className="h-20 w-20 opacity-50 mix-blend-lighten" />
           </motion.div>
         ))}
       </div>
