@@ -5,7 +5,6 @@ import FeaturesGrid from "@/components/FeaturesGrid";
 import DeveloperSection from "@/components/DeveloperSection";
 import AboutSection from "@/components/AboutSection";
 import Footer from "@/components/Footer";
-import BackgroundMusic from "@/components/BackgroundMusic";
 import ParticleEffect from "@/components/ParticleEffect";
 import ScrollProgress from "@/components/ScrollProgress";
 import GridBackground from "@/components/GridBackground";
@@ -29,7 +28,6 @@ const Landing = () => {
       <ScrollProgress />
       <ScrollToTop />
       <ParticleEffect />
-      <BackgroundMusic />
       <Navbar />
       <motion.div style={{ opacity, scale }}>
         <HeroSection />

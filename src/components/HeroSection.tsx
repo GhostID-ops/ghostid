@@ -65,19 +65,9 @@ const HeroSection = () => {
           className="text-5xl md:text-7xl font-bold mb-6 tracking-tight"
         >
           Sign in without <br />
-          <motion.span 
-            className="text-gradient inline-block"
-            animate={{
-              filter: ["blur(0px)", "blur(2px)", "blur(0px)"],
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              repeatDelay: 2,
-            }}
-          >
+          <span className="text-gradient">
             being seen
-          </motion.span>
+          </span>
         </motion.h1>
 
         <motion.p

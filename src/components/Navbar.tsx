@@ -46,7 +46,7 @@ const Navbar = () => {
             <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
               <Ghost className="h-6 w-6 text-primary" />
             </div>
-            <span className="font-bold text-xl">GhostID</span>
+            <span className="font-bold text-xl font-orbitron">GhostID</span>
           </Link>
 
           <div className="hidden md:flex items-center gap-6">
