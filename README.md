@@ -10,7 +10,7 @@ Instead of logging in with a public key, users generate **temporary zk-tokens** 
 ## 🌐 Live Demo
 **Website:** [ghostid.network](https://ghostid.network)  
 **App:** [ghostid.network/app](https://ghostid.network/app)
-**X:** [[ghostid.network/app](https://x.com/ghostidprotocol)]([https://ghostid.network/app](https://x.com/ghostidprotocol))
+**X:** https://x.com/ghostidprotocol
 
 
 ---
