@@ -5,7 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { WagmiProvider } from "wagmi";
 import { createWeb3Modal } from "@web3modal/wagmi/react";
-import { config, projectId } from "./config/web3";
+import { config, projectId } from "./config/web3"; //WalletConnect
 import Landing from "./pages/Landing";
 import AppPage from "./pages/App";
 import SDK from "./pages/SDK";
